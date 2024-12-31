@@ -10,11 +10,17 @@ type HintConfig = {
   show?: boolean;
   text?: string;
 }
+type ClassConfig = {
+  label?: string;
+  input?: string;
+  hint?: string;
+}
 type PropsExtra = {
   label?: string;
   description?: string;
   iconConfig?: IconConfig;
   hintConfig?: HintConfig;
+  classConfig?: ClassConfig;
 }
 type LabelProps = {
   label: string;
@@ -25,6 +31,7 @@ type WrapperProps = {
   padding: string;
   orientation: string;
   icon?: IconConfig["icon"];
+  className?: string;
 }
 
 type PropsGeneric = Omit<PropsExtra, "description">

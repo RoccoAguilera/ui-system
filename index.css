@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --xs: 0.3125rem; /* 5px */
+
+  --font-inter: "inter", var(--font-sans);
+
+  --spacing-xs: var(--xs);
+  --spacing-5x7: 2.1875rem; /* 35px */
+
+  --radius-xs: var(--xs);
+
+  --inset-shadow-hack: inset 0px 0px 0px 18px;
+
+  /* Color Gray */
+  --color-gry-50: oklch(98.6% 0 0);
+  --color-gry-100: oklch(94.6% 0 0);
+  --color-gry-200: oklch(89.4% 0 0);
+  --color-gry-300: oklch(83.3% 0 0);
+  --color-gry-400: oklch(74.8% 0 0);
+  --color-gry-500: oklch(68.3% 0 0);
+  --color-gry-600: oklch(62.7% 0 0);
+  --color-gry-700: oklch(58.3% 0 0);
+  --color-gry-800: oklch(51.4% 0 0);
+  --color-gry-900: oklch(44.6% 0 0);
+  --color-gry-950: oklch(33.3% 0 0);
+
+  /* Color purple */
+  --color-pur-50: oklch(96.2% 0.022 293);
+  --color-pur-100: oklch(93.1% 0.04 293.5);
+  --color-pur-200: oklch(87.2% 0.075 292.2);
+  --color-pur-300: oklch(77.6% 0.136 291.9);
+  --color-pur-400: oklch(66.1% 0.212 290.9);
+  --color-pur-500: oklch(56.1% 0.278 288.1);
+  --color-pur-600: oklch(52.2% 0.301 285.5);
+  --color-pur-700: oklch(50.2% 0.307 280.4);
+  --color-pur-800: oklch(44.2% 0.269 281.2);
+  --color-pur-900: oklch(38.4% 0.23 282.6);
+  --color-pur-950: oklch(28.6% 0.175 280.3);
+
+  /* Color tomate */
+  --color-tom-600: oklch(64.86% 0.299 28.96);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  /* desactiva el scroll en navegadores webkit */
+  /* display: none; */
+  -webkit-appearance: none;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  appearance: none;
+}
