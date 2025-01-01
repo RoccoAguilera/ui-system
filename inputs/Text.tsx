@@ -2,15 +2,14 @@ import type { InputTextProp, WrapperProps, LabelProps } from "../@types/type-inp
 import { styleDerived } from "../@utils/util-inputs"
 
 function Text(props: InputTextProp) {
-  const { label, iconConfig, hintConfig, classConfig, ...rest } = props
+  const { label, iconConfig, hintConfig, ...rest } = props
   const { padding, orientation, hint } = styleDerived(props)
   return (
-    <label className="flex flex-col gap-xs h-fit border-gry-200 text-sm">
+    <label className={`flex flex-col gap-xs h-fit border-gry-200 outline-pur-700 text-sm text-black`}>
       <InputWrapper
         padding={padding}
         orientation={orientation}
         icon={iconConfig?.icon}
-        className={classConfig?.input}
         {...rest}
       />
       {label && <Label label={label} hint={hint} hintText={hintConfig?.text} />}
@@ -18,11 +17,11 @@ function Text(props: InputTextProp) {
   )
 }
 
-function InputWrapper({ padding, orientation, icon, className, ...rest }: WrapperProps & InputTextProp) {
+function InputWrapper({ padding, orientation, icon, ...rest }: WrapperProps & InputTextProp) {
   return (
-    <div className="peer relative border border-inherit rounded-xs outline-hidden outline-offset-1 focus-within:outline-pur-700 has-invalid:focus-within:outline-tom-600 has-disabled:cursor-not-allowed overflow-hidden">
+    <div className="peer relative border border-inherit rounded-xs outline-hidden outline-offset-1 focus-within:outline-inherit has-invalid:focus-within:outline-tom-600 has-disabled:cursor-not-allowed overflow-hidden">
       <input
-        className={`${padding} ${className ?? "peer appearance-none w-full h-5x7 outline-none placeholder:text-black/25 placeholder:select-none disabled:text-black/25 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white"}`}
+        className={`${padding} peer appearance-none w-full h-5x7 outline-none placeholder:text-black/25 placeholder:select-none disabled:text-black/25 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white`}
         {...rest}
       />
       {icon && (
