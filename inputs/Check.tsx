@@ -1,5 +1,5 @@
-import type { InputCheckProp, LabelProps } from "../@types/type-inputs"
 import { checkRounded } from "../@utils/util-inputs"
+import type { InputCheckProp, LabelProps } from "../@types/type-inputs"
 
 function Check(props: InputCheckProp) {
   const { label, description, ...rest } = props

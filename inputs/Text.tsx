@@ -1,5 +1,5 @@
-import type { InputTextProp, WrapperProps, LabelProps } from "../@types/type-inputs"
 import { styleDerived } from "../@utils/util-inputs"
+import type { InputTextProp, WrapperProps, LabelProps } from "../@types/type-inputs"
 
 function Text(props: InputTextProp) {
   const { label, iconConfig, hintConfig, ...rest } = props

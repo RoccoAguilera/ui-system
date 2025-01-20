@@ -1,5 +1,5 @@
-import type { TextAreaProp, LabelProps } from "../@types/type-inputs"
 import { styleDerived } from "../@utils/util-inputs"
+import type { TextAreaProp, LabelProps } from "../@types/type-inputs"
 
 function Textarea(props: TextAreaProp) {
   const { label, hintConfig, ...rest } = props

@@ -1,5 +1,5 @@
-import type { SelectProp, WrapperProps, LabelProps } from "../@types/type-inputs"
 import { styleDerived } from "../@utils/util-inputs"
+import type { SelectProp, WrapperProps, LabelProps } from "../@types/type-inputs"
 
 function Select(props: SelectProp) {
   const { label, iconConfig, hintConfig, ...rest } = props
