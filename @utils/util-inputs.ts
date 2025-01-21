@@ -1,18 +1,15 @@
 import type { PropsExtra, InputTextProp, InputCheckProp, SelectProp, TextAreaProp } from "../@types/type-inputs"
-import { useMemo } from "react"
 
 type IconConfig = PropsExtra["iconConfig"]
 
 function styleDerived(props: InputTextProp | SelectProp | TextAreaProp) {
-  return useMemo(() => {
-    const iconConfig = "iconConfig" in props ? props.iconConfig : undefined
+  const iconConfig = "iconConfig" in props ? props.iconConfig : undefined
 
-    return {
-      orientation: checkOrientation(iconConfig),
-      padding: checkPadding(iconConfig),
-      hint: checkHint(props.required, props.hintConfig),
-    }
-  }, [props])
+  return {
+    orientation: checkOrientation(iconConfig),
+    padding: checkPadding(iconConfig),
+    hint: checkHint(props.required, props.hintConfig),
+  }
 }
 
 function checkRounded(type: InputCheckProp["type"]): string {
