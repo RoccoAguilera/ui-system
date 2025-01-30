@@ -1,5 +1,5 @@
-import { styleDerived } from "../@utils/util-inputs"
-import type { TextAreaProp, LabelProps } from "../@types/type-inputs"
+import { styleDerived } from "../@utils/derived-inputs"
+import type { TextAreaProp, LabelProps } from "../@types/inputs"
 
 function Textarea(props: TextAreaProp) {
   const { label, hintConfig, ...rest } = props
@@ -7,7 +7,7 @@ function Textarea(props: TextAreaProp) {
   return (
     <label className="flex flex-col gap-xs h-fit border-gry-200 outline-pur-700 text-sm text-black">
       <textarea
-        className="peer appearance-none min-h-[37px] px-2.5 py-[7.5px] field-sizing-content whitespace-pre-wrap break-words border border-inherit rounded-xs outline-hidden outline-offset-1 focus-within:outline-inherit placeholder:text-black/25 placeholder:select-none disabled:text-black/25 invalid:focus:outline-tom-600 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white overflow-hidden"
+        className="peer appearance-none min-h-[37px] px-2.5 py-[7.5px] field-sizing-content whitespace-pre-wrap break-words border border-inherit rounded-xs outline-offset-1 outline-inherit focus-within:outline-2 placeholder:text-black/25 placeholder:select-none disabled:text-black/25 invalid:focus:outline-tom-600 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white overflow-hidden"
         style={{ wordBreak: 'break-word', }}
         rows={1}
         {...rest}

@@ -1,4 +1,4 @@
-import type { ButtonProp } from "../@types/type-button";
+import type { ButtonProp } from "../@types/button";
 
 type Behavior = ButtonProp["behavior"];
 

@@ -1,5 +1,5 @@
-import { checkRounded } from "../@utils/util-inputs"
-import type { InputCheckProp, LabelProps } from "../@types/type-inputs"
+import { checkRounded } from "../@utils/derived-inputs"
+import type { InputCheckProp, LabelProps } from "../@types/inputs"
 
 function Check(props: InputCheckProp) {
   const { label, description, ...rest } = props
@@ -21,7 +21,7 @@ function InputWrapper({ rounded, ...rest }: { rounded: string } & InputCheckProp
     <div className="peer border-inherit outline-inherit pt-0.5 ">
       <div className="relative w-fit h-4 border-inherit outline-inherit has-disabled:cursor-not-allowed">
         <input
-          className={`${rounded} peer appearance-none w-4 h-4 border border-inherit outline-transparent outline-2 outline-offset-1 bg-white focus:outline-inherit invalid:focus:outline-tom-600 disabled:cursor-not-allowed`}
+          className={`${rounded} peer appearance-none w-4 h-4 border border-inherit outline-offset-1 outline-inherit bg-white focus:outline-2 invalid:focus:outline-tom-600 disabled:cursor-not-allowed`}
           {...rest}
         />
         {rest.type == "checkbox" ? (

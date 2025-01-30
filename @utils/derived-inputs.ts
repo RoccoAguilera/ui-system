@@ -1,4 +1,4 @@
-import type { PropsExtra, InputTextProp, InputCheckProp, SelectProp, TextAreaProp } from "../@types/type-inputs"
+import type { PropsExtra, InputTextProp, InputCheckProp, SelectProp, TextAreaProp } from "../@types/inputs"
 
 type IconConfig = PropsExtra["iconConfig"]
 

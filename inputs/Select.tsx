@@ -1,5 +1,5 @@
-import { styleDerived } from "../@utils/util-inputs"
-import type { SelectProp, WrapperProps, LabelProps } from "../@types/type-inputs"
+import { styleDerived } from "../@utils/derived-inputs"
+import type { SelectProp, WrapperProps, LabelProps } from "../@types/inputs"
 
 function Select(props: SelectProp) {
   const { label, iconConfig, hintConfig, ...rest } = props
@@ -19,7 +19,7 @@ function Select(props: SelectProp) {
 
 function SelectWrapper({ padding, orientation, icon, children, ...rest }: WrapperProps & SelectProp) {
   return (
-    <div className="peer relative border border-inherit rounded-xs outline-hidden outline-offset-1 focus-within:outline-inherit has-invalid:focus-within:outline-tom-600 has-disabled:cursor-not-allowed overflow-hidden">
+    <div className="peer relative border border-inherit rounded-xs outline-offset-1 outline-inherit focus-within:outline-2 has-invalid:focus-within:outline-tom-600 has-disabled:cursor-not-allowed overflow-hidden">
       <select
         className={`${padding} peer appearance-none w-full h-5x7 outline-none placeholder:text-black/25 placeholder:select-none disabled:text-black/25 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white`}
         {...rest}
