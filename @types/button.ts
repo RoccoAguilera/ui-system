@@ -4,6 +4,6 @@ interface PropsExtra {
   behavior?: "normal" | "onlyIcon";
 }
 
-interface ButtonProp extends ComponentProps<"button">, PropsExtra {}
+interface ButtonProp extends ComponentProps<"button">, PropsExtra { }
 
 export type { ButtonProp }

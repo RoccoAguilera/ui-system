@@ -1,42 +1,60 @@
-import { useState, useRef, useEffect, ReactNode, ComponentProps } from "react"
-import { assignPosition } from "../@utils"
+import { useState, ReactNode, isValidElement } from "react"
+import {
+  useFloating,
+  autoUpdate,
+  useInteractions,
+  useClick,
+  useDismiss,
+  flip,
+  shift,
+  type UseFloatingOptions,
+} from "@floating-ui/react"
 
-type Props = { children: [ReactNode, ReactNode] } & ComponentProps<"div">
-type Reference = HTMLDivElement | null
+type Props = {
+  children: [ReactNode, ReactNode];
+  floatingOption?: Omit<UseFloatingOptions, "open" | "onOpenChange" | "whileElementsMounted">
+}
 
-export default function Dropdown({ children, ...rest }: Props) {
-  const reference = useRef<Reference>(null)
-  const [state, setState] = useState<Reference>(null)
+export default function Dropdown({ children, floatingOption }: Props) {
   const [firstChild, lastChild] = children
-  const observerResize = new ResizeObserver(handlerAssign)
-  function handlerAssign() {
-    console.log("called")
-    if (state) { assignPosition(state) }
+  const [isOpen, setIsOpen] = useState(false)
+  const { refs, floatingStyles, context } = useFloating<HTMLButtonElement>({
+    ...floatingOption,
+    placement: floatingOption?.placement ?? "bottom-start",
+    middleware: floatingOption?.middleware ?? [flip(), shift()],
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    whileElementsMounted: autoUpdate,
+  })
+
+  const click = useClick(context)
+  const dismiss = useDismiss(context)
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss,])
+
+  const newFirstChild = isValidElement(firstChild) && {
+    ...firstChild,
+    ref: refs.setReference,
+    props: {
+      ...firstChild.props,
+      ...getReferenceProps(),
+    }
   }
 
-  useEffect(() => {
-    const { current } = reference
-
-    if (current && current.offsetParent) {
-      observerResize.observe(current.offsetParent)
-      setState(current)
+  const newLastChild = isValidElement(lastChild) && {
+    ...lastChild,
+    ref: refs.setFloating,
+    props: {
+      ...lastChild.props,
+      ...getFloatingProps(),
+      style: floatingStyles,
     }
-    
-    return () => {
-      observerResize.disconnect()
-    }
-  }, [state])
+  }
 
   return (
-    <div
-      ref={reference}
-      className="w-fit h-fit"
-      // onClick={handlerAssign}
-      // onBlur={handlerAssign}
-      {...rest}
-    >
-      {firstChild}
-      {lastChild}
-    </div>
+    <>
+      {newFirstChild}
+      {isOpen && newLastChild}
+    </>
   )
 }

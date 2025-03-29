@@ -5,9 +5,9 @@ function Textarea(props: TextAreaProp) {
   const { label, hintConfig, ...rest } = props
   const { hint } = styleDerived(props)
   return (
-    <label className="flex flex-col gap-xs h-fit border-gry-200 outline-pur-700 text-sm text-black">
+    <label className="flex flex-col gap-xs h-fit border-input-color outline-emphasis text-sm text-input-text">
       <textarea
-        className="peer appearance-none min-h-[37px] px-2.5 py-[7.5px] field-sizing-content whitespace-pre-wrap break-words border border-inherit rounded-xs outline-offset-1 outline-inherit focus-within:outline-2 placeholder:text-black/25 placeholder:select-none disabled:text-black/25 invalid:focus:outline-tom-600 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white overflow-hidden"
+        className="peer appearance-none min-h-[37px] px-2.5 py-[7.5px] field-sizing-content whitespace-pre-wrap break-words border border-inherit rounded-xs outline-offset-1 outline-inherit focus-within:outline-2 placeholder:text-input-text/25 placeholder:select-none disabled:text-input-text/25 invalid:focus:outline-emphasis-error disabled:cursor-not-allowed inset-shadow-hack inset-shadow-shadow-color overflow-hidden"
         style={{ wordBreak: 'break-word', }}
         rows={1}
         {...rest}
@@ -19,7 +19,7 @@ function Textarea(props: TextAreaProp) {
 
 function Label({ label, hint, hintText }: LabelProps) {
   return (
-    <div className="order-first flex justify-between gap-xs border-inherit peer-disabled:text-black/25">
+    <div className="order-first flex justify-between gap-xs border-inherit peer-disabled:text-input-text/25">
       <span>{label}</span>
       {hint && (
         <span className="h-fit border border-inherit rounded-xs px-2.5 text-xs/4.5 select-none">

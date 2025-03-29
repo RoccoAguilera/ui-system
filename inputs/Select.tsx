@@ -5,7 +5,7 @@ function Select(props: SelectProp) {
   const { label, iconConfig, hintConfig, ...rest } = props
   const { padding, orientation, hint } = styleDerived(props)
   return (
-    <label className="flex flex-col gap-xs h-fit border-gry-200 outline-pur-700 text-sm text-black">
+    <label className="flex flex-col gap-xs h-fit border-input-color outline-emphasis text-sm text-input-text">
       <SelectWrapper
         padding={padding}
         orientation={orientation}
@@ -19,16 +19,16 @@ function Select(props: SelectProp) {
 
 function SelectWrapper({ padding, orientation, icon, children, ...rest }: WrapperProps & SelectProp) {
   return (
-    <div className="peer relative border border-inherit rounded-xs outline-offset-1 outline-inherit focus-within:outline-2 has-invalid:focus-within:outline-tom-600 has-disabled:cursor-not-allowed overflow-hidden">
+    <div className="peer relative border border-inherit rounded-xs outline-offset-1 outline-inherit focus-within:outline-2 has-invalid:focus-within:outline-emphasis-error has-disabled:cursor-not-allowed overflow-hidden">
       <select
-        className={`${padding} peer appearance-none w-full h-5x7 outline-none placeholder:text-black/25 placeholder:select-none disabled:text-black/25 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-white`}
+        className={`${padding} peer appearance-none w-full h-5x7 outline-none placeholder:text-input-text/25 placeholder:select-none disabled:text-input-text/25 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-shadow-color`}
         {...rest}
       >
         {children}
       </select>
       {icon && (
         <span
-          className={`${orientation} absolute top-0 flex items-center justify-center size-5x7 peer-disabled:opacity-25 peer-placeholder-shown:opacity-25 select-none`}
+          className={`${orientation} absolute top-0 flex items-center justify-center size-5x7 peer-disabled:opacity-25 peer-placeholder-shown:opacity-25 select-none pointer-events-none`}
         >
           {icon}
         </span>

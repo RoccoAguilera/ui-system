@@ -1,18 +1,23 @@
+import { forwardRef } from "react";
 import { checkBehavior } from "../@utils/derived-buttons"
 import type { ButtonProp } from "../@types/button"
 
-function Border(props: ButtonProp) {
-  const behavior = checkBehavior(props.behavior)
-  return (
-    <button
-      className={`${behavior} group border border-gry-200 rounded-lg outline-offset-1 outline-pur-700 text-sm bg-white select-none cursor-pointer hover:border-gry-400 active:border-gry-700 focus-visible:outline-2 disabled:border-gry-200 disabled:cursor-not-allowed`}
-      {...props}
-    >
-      <div className="flex items-center justify-center gap-xs group-disabled:opacity-50">
-        {props.children}
-      </div>
-    </button>
-  )
-}
+const Border = forwardRef<HTMLButtonElement, ButtonProp>(
+  function Border(props, ref) {
+    const { behavior, children, ...rest } = props
+    const behaviorStyle = checkBehavior(behavior)
+    return (
+      <button
+        className={`${behaviorStyle} group border rounded-lg outline-offset-1 outline-emphasis text-sm text-border-text select-none cursor-pointer border-border-normal hover:border-border-hover active:border-border-active disabled:border-border-disabled focus-visible:outline-2 disabled:cursor-not-allowed`}
+        ref={ref}
+        {...rest}
+      >
+        <div className="flex items-center justify-center gap-xs group-disabled:opacity-50">
+          {children}
+        </div>
+      </button>
+    )
+  }
+)
 
 export default Border

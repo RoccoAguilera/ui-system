@@ -1,18 +1,23 @@
+import { forwardRef } from "react"
 import { checkBehavior } from "../@utils/derived-buttons"
 import type { ButtonProp } from "../@types/button"
 
-function Action(props: ButtonProp) {
-  const behavior = checkBehavior(props.behavior)
-  return (
-    <button
-      className={`${behavior} group rounded-lg outline-offset-1 outline-pur-700 text-sm text-white bg-pur-700 select-none cursor-pointer hover:bg-pur-800 active:bg-pur-900 focus-visible:outline-2 disabled:bg-pur-400 disabled:cursor-not-allowed`}
-      {...props}
-    >
-      <div className="flex items-center justify-center gap-xs">
-        {props.children}
-      </div>
-    </button>
-  )
-}
+const Action = forwardRef<HTMLButtonElement, ButtonProp>(
+  function Action(props, ref) {
+    const { behavior, children, ...rest } = props
+    const behaviorStyle = checkBehavior(behavior)
+    return (
+      <button
+        className={`${behaviorStyle} group rounded-lg outline-offset-1 outline-emphasis text-sm text-action-text select-none cursor-pointer bg-action-normal hover:bg-action-hover active:bg-action-active disabled:bg-action-disabled focus-visible:outline-2 disabled:cursor-not-allowed`}
+        ref={ref}
+        {...rest}
+      >
+        <div className="flex items-center justify-center gap-xs">
+          {children}
+        </div>
+      </button>
+    )
+  }
+)
 
 export default Action

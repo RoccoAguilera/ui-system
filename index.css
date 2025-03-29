@@ -1,16 +1,50 @@
 @import "tailwindcss";
 
-@theme {
-  --xs: 0.3125rem; /* 5px */
+@theme {  
+  /* Color Emphasis - focus on element global */
+  --color-emphasis: var(--color-pur-700);
+  --color-emphasis-error: var(--color-tom-600);
 
-  --font-inter: "inter", var(--font-sans);
+  /* Action Button - background and text */
+  --color-action-text: var(--color-white);
+  --color-action-disabled: var(--color-pur-400);
+  --color-action-normal: var(--color-pur-700);
+  --color-action-hover: var(--color-pur-800);
+  --color-action-active: var(--color-pur-900);
+  
+  /* Filled Button - background and text */
+  --color-filled-text: var(--color-black);
+  --color-filled-disabled: var(--color-gry-50);
+  --color-filled-normal: var(--color-gry-100);
+  --color-filled-hover: var(--color-gry-200);
+  --color-filled-active: var(--color-gry-300);
+  
+  /* Border Button - border and text */
+  --color-border-text: var(--color-black);
+  --color-border-disabled: var(--color-gry-200);
+  --color-border-normal: var(--color-gry-200);
+  --color-border-hover: var(--color-gry-400);
+  --color-border-active: var(--color-gry-700);
+  
+  /* Border Empty - text */
+  --color-empty-text: var(--color-black);
+
+  /* Input generic - border and text */
+  --color-input-text: var(--color-black);
+  --color-input-color: var(--color-gry-200);
+  --inset-shadow-hack: inset 0px 0px 0px 18px;
+  --color-shadow-color: var(--color-white);
+  
+  /* Input check - check backgroun and description */
+  --color-input-check-background: var(--color-white);
+  --color-input-check-description: var(--color-gry-900);
+
+  --xs: 0.3125rem; /* 5px */
+  --5x7: 2.1875rem; /* 35px */
 
   --spacing-xs: var(--xs);
-  --spacing-5x7: 2.1875rem; /* 35px */
-
+  --spacing-5x7: var(--5x7);
   --radius-xs: var(--xs);
-
-  --inset-shadow-hack: inset 0px 0px 0px 18px;
 
   /* Color Gray */
   --color-gry-50: oklch(98.6% 0 0);
@@ -41,25 +75,6 @@
   /* Color tomate */
   --color-tom-600: oklch(64.86% 0.299 28.96);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 input[type=number] {
   appearance: textfield;
