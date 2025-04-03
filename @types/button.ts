@@ -1,9 +1,10 @@
 import { ComponentProps } from "react"
 
 interface PropsExtra {
-  behavior?: "normal" | "onlyIcon";
+  configBehavior?: "base" | "onlyIcon";
+  configSize?: "sm" | "lg";
 }
 
-interface ButtonProp extends ComponentProps<"button">, PropsExtra { }
+type ButtonProp = ComponentProps<"button"> & PropsExtra
 
-export type { ButtonProp }
+export type { PropsExtra, ButtonProp }

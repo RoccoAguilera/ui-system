@@ -1,10 +1,14 @@
-import type { ButtonProp } from "../@types/button";
+import type { PropsExtra } from "../@types/button";
 
-type Behavior = ButtonProp["behavior"];
-
-function checkBehavior(props?: Behavior): string {
-  const defaultValue = "w-full min-h-5x7 h-fit px-4";
-  return props ? (props === 'normal' ? defaultValue : "size-5x7") : defaultValue;
+function checkOption({ configBehavior = "base", configSize = "lg" }: PropsExtra): string {
+  const defaultStyle = "size-auto";
+  const baseStyle = configSize == "lg" ?
+    `${defaultStyle} min-h-9 px-4 text-sm` :
+    `${defaultStyle} min-h-7 px-3 text-xs`
+  const iconStyle = configSize == "lg" ?
+    "size-9 text-sm" :
+    "size-7 text-xs"
+  return configBehavior == "base" ? baseStyle : iconStyle
 }
 
-export { checkBehavior };
+export { checkOption };
