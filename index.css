@@ -13,9 +13,9 @@
   /* Filled Button - background and text */
   --color-filled-text: var(--color-black);
   --color-filled-disabled: var(--color-gry-50);
-  --color-filled-normal: var(--color-gry-100);
-  --color-filled-hover: var(--color-gry-200);
-  --color-filled-active: var(--color-gry-300);
+  --color-filled-normal: var(--color-gry-50);
+  --color-filled-hover: var(--color-gry-100);
+  --color-filled-active: var(--color-gry-200);
   
   /* Border Button - border and text */
   --color-border-text: var(--color-black);

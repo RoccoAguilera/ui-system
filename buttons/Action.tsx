@@ -8,7 +8,7 @@ const Action = forwardRef<HTMLButtonElement, ButtonProp>(
     const style = checkOption({ configBehavior, configSize })
     return (
       <button
-        className={`${style} rounded-lg outline-offset-1 outline-emphasis text-action-text text-sm select-none cursor-pointer bg-action-normal hover:bg-action-hover active:bg-action-active disabled:bg-action-disabled focus-visible:outline-2 disabled:cursor-not-allowed`}
+        className={`${style} border-r border-b-2 border-black/25 rounded-lg outline-offset-1 outline-emphasis text-action-text select-none cursor-pointer bg-action-normal hover:bg-action-hover active:bg-action-active disabled:bg-action-disabled focus-visible:outline-2 disabled:cursor-not-allowed`}
         ref={ref}
         {...rest}
       >
