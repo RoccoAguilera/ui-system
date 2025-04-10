@@ -1,14 +1,13 @@
 import { LabelInput } from "./components/Labels"
 import { styleVariant } from "../@utils/derived-inputs"
-import type { SelectProp } from "../@types/inputs"
+import type { InputTextProp } from "../@types/inputs"
 
-function Select(props: SelectProp) {
+function Input(props: InputTextProp) {
   const {
     dataSize = "lg",
     dataLabel,
     dataIcon,
     dataHint,
-    children,
     ...rest
   } = props
   const styles = styleVariant({
@@ -20,12 +19,10 @@ function Select(props: SelectProp) {
     <label className={`${styles.general} flex flex-col gap-1.5 h-fit border-input-color text-input-text`}>
       <div className="peer relative border border-inherit rounded-md outline-offset-1 outline-emphasis focus-within:outline-2 has-invalid:focus-within:outline-emphasis-error has-disabled:cursor-not-allowed overflow-hidden">
 
-        <select
+        <input
           className={`${styles.input} peer appearance-none w-full outline-none placeholder:text-input-text/25 placeholder:select-none disabled:text-input-text/25 disabled:cursor-not-allowed inset-shadow-hack inset-shadow-shadow-color`}
           {...rest}
-        >
-          {children}
-        </select>
+        />
 
         {dataIcon && (
           <span className={`${styles.icon} absolute top-0 flex items-center justify-center peer-disabled:opacity-25 peer-placeholder-shown:opacity-25 select-none pointer-events-none`}>
@@ -45,4 +42,4 @@ function Select(props: SelectProp) {
   )
 }
 
-export default Select
+export default Input

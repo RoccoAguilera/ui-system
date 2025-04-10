@@ -35,14 +35,6 @@
   
   /* Input check - check backgroun and description */
   --color-input-check-background: var(--color-white);
-  --color-input-check-description: var(--color-gry-900);
-
-  --xs: 0.3125rem; /* 5px */
-  --5x7: 2.1875rem; /* 35px */
-
-  --spacing-xs: var(--xs);
-  --spacing-5x7: var(--5x7);
-  --radius-xs: var(--xs);
 
   /* Color Gray */
   --color-gry-50: oklch(98.6% 0 0);
@@ -81,8 +73,7 @@ input[type=number] {
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  /* desactiva el scroll en navegadores webkit */
-  /* display: none; */
+  display: none; /* desactiva el scroll en navegadores webkit */
   -webkit-appearance: none;
 }
 

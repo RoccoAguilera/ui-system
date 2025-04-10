@@ -1,14 +1,21 @@
 import { forwardRef } from "react"
-import { checkOption } from "../@utils/derived-buttons"
+import { styleVariant } from "../@utils/derived-buttons"
 import type { ButtonProp } from "../@types/button"
 
 const Filled = forwardRef<HTMLButtonElement, ButtonProp>(
   function Filled(props, ref) {
-    const { configBehavior, configSize, children, ...rest } = props
-    const style = checkOption({ configBehavior, configSize, })
+    const {
+      dataBehavior = "default",
+      dataSize = "lg",
+      children,
+      ...rest
+    } = props
+    const style = styleVariant({ dataBehavior, dataSize })
     return (
       <button
         className={`group ${style} border-r border-b-2 border-black/25 rounded-lg outline-offset-1 outline-emphasis text-filled-text select-none cursor-pointer bg-filled-normal hover:bg-filled-hover active:bg-filled-active disabled:bg-filled-disabled focus-visible:outline-2 disabled:cursor-not-allowed`}
+        data-behavior={dataBehavior}
+        data-size={dataSize}
         ref={ref}
         {...rest}
       >

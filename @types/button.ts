@@ -1,8 +1,8 @@
 import { ComponentProps } from "react"
 
 interface PropsExtra {
-  configBehavior?: "base" | "onlyIcon";
-  configSize?: "sm" | "lg";
+  dataBehavior?: "default" | "onlyIcon";
+  dataSize?: "sm" | "lg";
 }
 
 type ButtonProp = ComponentProps<"button"> & PropsExtra
