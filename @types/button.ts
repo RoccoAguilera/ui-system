@@ -1,7 +1,7 @@
 import { ComponentProps } from "react"
 
 interface PropsExtra {
-  dataBehavior?: "default" | "onlyIcon";
+  dataBehavior?: "default" | "icon";
   dataSize?: "sm" | "lg";
 }
 

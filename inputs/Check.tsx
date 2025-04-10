@@ -4,7 +4,6 @@ import type { InputCheckProp, CheckType } from "../@types/inputs"
 function Check(props: InputCheckProp) {
   const {
     type,
-    dataSize = "lg",
     dataLabel,
     ...rest
   } = props

@@ -13,7 +13,7 @@ type PropsExtra = Partial<{
 }>
 
 type PropsGeneric = PropsExtra
-type PropsCheck = Omit<PropsExtra, "dataIcon" | "dataHint">
+type PropsCheck = Omit<PropsExtra, "dataIcon" | "dataHint" | "dataSize">
 type PropsTextArea = Omit<PropsExtra, "dataIcon">
 
 type TextType = { type: Extract<HTMLInputTypeAttribute, "text" | "number" | "email" | "url" | "tel" | "password" | "search" | "datetime-local" | "date" | "month" | "week" | "time"> };
